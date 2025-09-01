@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Boda Agustina & Enrique - Agregar al calendario</title>
+<!-- Font Awesome CDN para iconos -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -18,13 +20,16 @@
         margin-bottom: 30px;
     }
     .btn {
-        display: inline-block;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
         margin: 10px;
         padding: 15px 25px;
         font-size: 16px;
         text-decoration: none;
         color: #fff;
         border-radius: 8px;
+        gap: 10px;
     }
     .google { background-color: #4285F4; }
     .ios { background-color: #A2AAAD; }
@@ -40,8 +45,8 @@
 
 <h1>Boda Agustina & Enrique</h1>
 <div class="event-info">
-    <p><strong>Fecha:</strong> Sábado 8 de noviembre de 2025, 20:00 h</p>
-    <p><strong>Dirección:</strong> Irigoitia 1007, Montevideo, Uruguay</p>
+    <p><strong>Fecha:</strong> 8 de noviembre de 2025, 20:00 h</p>
+    <p><strong>Ubicación:</strong> <a href="https://www.google.com/maps/search/?api=1&query=Irigoitia+1007,+Montevideo,+Uruguay" target="_blank">Irigoitia 1007, Montevideo, Uruguay</a></p>
 </div>
 
 <p>Hacé clic en tu calendario favorito para agregar el evento:</p>
@@ -50,23 +55,23 @@
 <a class="btn google"
    href="https://calendar.google.com/calendar/r/eventedit?text=Boda+Agustina+%26+Enrique&dates=20251108T200000/20251109T053000&details=¡Los+esperamos+para+celebrar+juntos!&location=Irigoitia+1007,+Montevideo,+Uruguay"
    target="_blank">
-   Agregar a Google Calendar
+   <i class="fab fa-google"></i> Google Calendar
 </a>
 
 <!-- iOS / Apple Calendar -->
 <a class="btn ios" href="evento.ics">
-   Agregar a Apple/iOS Calendar
+   <i class="fab fa-apple"></i> Apple Calendar
 </a>
 
 <!-- Outlook -->
 <a class="btn outlook"
    href="https://outlook.office.com/calendar/0/deeplink/compose?subject=Boda+Agustina+%26+Enrique&startdt=2025-11-08T20:00:00&enddt=2025-11-09T05:30:00&body=¡Los+esperamos+para+celebrar+juntos!&location=Irigoitia+1007,+Montevideo,+Uruguay"
    target="_blank">
-   Agregar a Outlook
+   <i class="fa-solid fa-envelope"></i> Microsoft Outlook
 </a>
 
 <div class="note">
-    <p>Nota: en iOS, si el evento no se abre automáticamente, probá abrir esta página en Safari para agregarlo a tu Calendario.</p>
+    <p>Nota: en dispositivos Apple, si el evento no se abre automáticamente, probá abrir esta página en Safari para agregarlo a tu calendario.</p>
 </div>
 
 </body>
