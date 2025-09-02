@@ -86,8 +86,8 @@
     
             <!-- Microsoft Outlook -->
             <a class="btn outlook"
-                id="btnOutlook"
-                href="#">
+                href="https://outlook.live.com/calendar/action/compose?path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2025-11-08T23:00:00Z&enddt=2025-11-09T08:30:00Z&subject=Boda%20Agustina%20%26%20Enrique&location=Irigoitia%201007%2C%20Montevideo%2C%20Uruguay&allday=false"
+                target="_blank">
                <i class="fab fa-microsoft"></i> Microsoft Outlook
             </a>
         </div>
@@ -95,31 +95,5 @@
         <div class="note">
             <p>Nota: para agregar el evento a Apple Calendar en dispositivos Apple, probá abrir esta página en Safari si el evento no se abre automáticamente.</p>
         </div>
-        <script>
-            const outlookEventUrl =
-                "https://outlook.live.com/calendar/action/compose?path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2025-11-08T23:00:00Z&enddt=2025-11-09T08:30:00Z&subject=Boda%20Agustina%20%26%20Enrique&location=Irigoitia%201007%2C%20Montevideo%2C%20Uruguay&allday=false";
-        
-            const outlookLoginUrl = "https://login.live.com/";
-        
-            function redirectToOutlook() {
-                try {
-                    window.open(outlookEventUrl, "_blank");
-        
-                    setTimeout(() => {
-                        if (document.visibilityState === "visible") {
-                          window.open(outlookLoginUrl, "_blank");
-                        }
-                    }, 3000);
-                } catch (err) {
-                    console.error("Error redirigiendo:", err);
-                    window.open(outlookLoginUrl, "_blank");
-                }
-            }
-    
-            document.getElementById("btnOutlook").addEventListener("click", function (e) {
-                e.preventDefault(); // evita navegación al "#"
-                redirectToOutlook();
-            });
-        </script>
     </body>
 </html>
