@@ -23,6 +23,9 @@
             h1.second {
                 margin-top: 0;
             }
+            p {
+                margin: 16px 0;
+            }
             .event-info {
                 margin-bottom: 30px;
             }
@@ -31,6 +34,9 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
+                flex-wrap: wrap;
+                gap: 10px;
+                padding: 20px 0 0 0;
             }
             .btn {
                 display: inline-flex;
@@ -48,19 +54,13 @@
             .apple { background-color: #A2AAAD; }
             .outlook { background-color: #0072C6; }
             .note {
-                margin-top: 20px;
                 font-size: 14px;
             }
 
-            @media (min-width: 300px) {
+            @media (min-width: 279px) {
                 .btn {
                     width: 151px;
-                }
-            }
-
-            @media (min-width: 758px) {
-                .buttons {
-                    flex-direction: row;
+                    white-space: nowrap;
                 }
             }
         </style>
