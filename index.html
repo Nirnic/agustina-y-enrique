@@ -63,40 +63,30 @@
     </head>
     <body>
     <script>
-        (function () {
-          // URL del evento en Outlook (si ya hay sesión iniciada)
-          const outlookEventUrl =
+        const outlookEventUrl =
             "https://outlook.live.com/calendar/action/compose?path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2025-11-08T23:00:00Z&enddt=2025-11-09T08:30:00Z&subject=Boda%20Agustina%20%26%20Enrique&location=Irigoitia%201007%2C%20Montevideo%2C%20Uruguay&allday=false";
     
-          // URL de login de Outlook
-          const outlookLoginUrl = "https://login.live.com/";
+        const outlookLoginUrl = "https://login.live.com/";
     
-          /**
-           * Estrategia:
-           * 1. Intentar abrir el enlace de evento.
-           * 2. Si Outlook no tiene sesión, normalmente redirige a login.
-           * 3. Como fallback, redirigimos manualmente al login.
-           */
-          function redirectToOutlook() {
+        function redirectToOutlook() {
             try {
-              // Redirigimos al evento directamente
-              window.location.href = outlookEventUrl;
+                window.open(outlookEventUrl, "_blank");
     
-              // Fallback por si Outlook no redirige automáticamente al login
-              setTimeout(() => {
-                if (document.visibilityState === "visible") {
-                  // Si la pestaña sigue visible, probablemente no funcionó
-                  window.location.href = outlookLoginUrl;
-                }
-              }, 3000); // espera 3 segundos antes de mandar a login
+                setTimeout(() => {
+                    if (document.visibilityState === "visible") {
+                      window.open(outlookLoginUrl, "_blank");
+                    }
+                }, 3000);
             } catch (err) {
-              console.error("Error redirigiendo:", err);
-              window.location.href = outlookLoginUrl;
+                console.error("Error redirigiendo:", err);
+                window.open(outlookLoginUrl, "_blank");
             }
-          }
-    
-          redirectToOutlook();
-        })();
+        }
+
+        document.getElementById("btnOutlook").addEventListener("click", function (e) {
+            e.preventDefault(); // evita navegación al "#"
+            redirectToOutlook();
+        });
     </script>
     <h1 class="first">Boda</h1>
     <h1 class="second">Agustina & Enrique</h1>
@@ -122,8 +112,8 @@
 
         <!-- Microsoft Outlook -->
         <a class="btn outlook"
-           href="redirectToOutlook()"
-           target="_blank">
+            id="btnOutlook"
+            href="#">
            <i class="fab fa-microsoft"></i> Microsoft Outlook
         </a>
     </div>
