@@ -62,65 +62,64 @@
         </style>
     </head>
     <body>
-    <script>
-        const outlookEventUrl =
-            "https://outlook.live.com/calendar/action/compose?path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2025-11-08T23:00:00Z&enddt=2025-11-09T08:30:00Z&subject=Boda%20Agustina%20%26%20Enrique&location=Irigoitia%201007%2C%20Montevideo%2C%20Uruguay&allday=false";
+        <h1 class="first">Boda</h1>
+        <h1 class="second">Agustina & Enrique</h1>
+        <div class="event-info">
+            <p><strong>Fecha y hora: </strong>Sábado 8 de noviembre de 2025, 20:00 h</p>
+            <p><strong>Lugar: </strong><a href="https://maps.app.goo.gl/WrmqXvQLwkHw3oQu8" target="_blank">Irigoitia 1007, Montevideo, Uruguay (Carmelitas)</a></p>
+        </div>
+        
+        <p>Hacé clic en tu calendario favorito para agregar el evento:</p>
     
-        const outlookLoginUrl = "https://login.live.com/";
+        <div class="buttons">
+            <!-- Google Calendar -->
+            <a class="btn google"
+               href="https://calendar.google.com/calendar/r/eventedit?text=Boda+Agustina+%26+Enrique&dates=20251108T230000Z/20251109T083000Z&location=Irigoitia+1007,+Montevideo,+Uruguay"
+               target="_blank">
+               <i class="fab fa-google"></i> Google Calendar
+            </a>
     
-        function redirectToOutlook() {
-            try {
-                window.open(outlookEventUrl, "_blank");
+            <!-- Apple Calendar -->
+            <a class="btn apple" href="evento.ics">
+               <i class="fab fa-apple fa-lg"></i> Apple Calendar
+            </a>
     
-                setTimeout(() => {
-                    if (document.visibilityState === "visible") {
-                      window.open(outlookLoginUrl, "_blank");
-                    }
-                }, 3000);
-            } catch (err) {
-                console.error("Error redirigiendo:", err);
-                window.open(outlookLoginUrl, "_blank");
+            <!-- Microsoft Outlook -->
+            <a class="btn outlook"
+                id="btnOutlook"
+                href="#">
+               <i class="fab fa-microsoft"></i> Microsoft Outlook
+            </a>
+        </div>
+    
+        <div class="note">
+            <p>Nota: para agregar el evento a Apple Calendar en dispositivos Apple, probá abrir esta página en Safari si el evento no se abre automáticamente.</p>
+        </div>
+        <script>
+            const outlookEventUrl =
+                "https://outlook.live.com/calendar/action/compose?path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2025-11-08T23:00:00Z&enddt=2025-11-09T08:30:00Z&subject=Boda%20Agustina%20%26%20Enrique&location=Irigoitia%201007%2C%20Montevideo%2C%20Uruguay&allday=false";
+        
+            const outlookLoginUrl = "https://login.live.com/";
+        
+            function redirectToOutlook() {
+                try {
+                    window.open(outlookEventUrl, "_blank");
+        
+                    setTimeout(() => {
+                        if (document.visibilityState === "visible") {
+                          window.open(outlookLoginUrl, "_blank");
+                        }
+                    }, 3000);
+                } catch (err) {
+                    console.error("Error redirigiendo:", err);
+                    window.open(outlookLoginUrl, "_blank");
+                }
             }
-        }
-
-        document.getElementById("btnOutlook").addEventListener("click", function (e) {
-            e.preventDefault(); // evita navegación al "#"
-            redirectToOutlook();
-        });
-    </script>
-    <h1 class="first">Boda</h1>
-    <h1 class="second">Agustina & Enrique</h1>
-    <div class="event-info">
-        <p><strong>Fecha y hora: </strong>Sábado 8 de noviembre de 2025, 20:00 h</p>
-        <p><strong>Lugar: </strong><a href="https://maps.app.goo.gl/WrmqXvQLwkHw3oQu8" target="_blank">Irigoitia 1007, Montevideo, Uruguay (Carmelitas)</a></p>
-    </div>
     
-    <p>Hacé clic en tu calendario favorito para agregar el evento:</p>
-
-    <div class="buttons">
-        <!-- Google Calendar -->
-        <a class="btn google"
-           href="https://calendar.google.com/calendar/r/eventedit?text=Boda+Agustina+%26+Enrique&dates=20251108T230000Z/20251109T083000Z&location=Irigoitia+1007,+Montevideo,+Uruguay"
-           target="_blank">
-           <i class="fab fa-google"></i> Google Calendar
-        </a>
-
-        <!-- Apple Calendar -->
-        <a class="btn apple" href="evento.ics">
-           <i class="fab fa-apple fa-lg"></i> Apple Calendar
-        </a>
-
-        <!-- Microsoft Outlook -->
-        <a class="btn outlook"
-            id="btnOutlook"
-            href="#">
-           <i class="fab fa-microsoft"></i> Microsoft Outlook
-        </a>
-    </div>
-
-    <div class="note">
-        <p>Nota: para agregar el evento a Apple Calendar en dispositivos Apple, probá abrir esta página en Safari si el evento no se abre automáticamente.</p>
-    </div>
-    
+            document.getElementById("btnOutlook").addEventListener("click", function (e) {
+                e.preventDefault(); // evita navegación al "#"
+                redirectToOutlook();
+            });
+        </script>
     </body>
 </html>
