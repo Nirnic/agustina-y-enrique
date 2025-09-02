@@ -1,79 +1,105 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Boda Agustina & Enrique</title>
-<!-- Font Awesome CDN para iconos -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        text-align: center;
-        padding: 40px;
-        background-color: #f7f7f7;
-    }
-    h1 {
-        color: #333;
-    }
-    .event-info {
-        margin-bottom: 30px;
-    }
-    .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        margin: 10px;
-        padding: 15px 25px;
-        font-size: 16px;
-        text-decoration: none;
-        color: #fff;
-        border-radius: 8px;
-        gap: 10px;
-    }
-    .google { background-color: #4285F4; }
-    .apple { background-color: #A2AAAD; }
-    .outlook { background-color: #0072C6; }
-    .note {
-        margin-top: 20px;
-        font-size: 14px;
-        color: #555;
-    }
-</style>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Boda Agustina & Enrique</title>
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+        <!-- Font Awesome CDN para iconos -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                text-align: center;
+                padding: 40px;
+                background-color: #f9f0d9;
+            }
+            h1, p {
+                color: #536f5d;
+            }
+            h1.first {
+                margin-bottom: 0;
+            }
+            h1.second {
+                margin-top: 0;
+            }
+            .event-info {
+                margin-bottom: 30px;
+            }
+            .buttons {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            .btn {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                margin: 10px;
+                padding: 15px 25px;
+                font-size: 16px;
+                text-decoration: none;
+                color: #fff;
+                border-radius: 8px;
+                gap: 10px;
+            }
+            .google { background-color: #4285F4; }
+            .apple { background-color: #A2AAAD; }
+            .outlook { background-color: #0072C6; }
+            .note {
+                margin-top: 20px;
+                font-size: 14px;
+            }
 
-<h1>Boda de</h1>
-<h1>Agustina & Enrique</h1>
-<div class="event-info">
-    <p><strong>Fecha y hora: </strong>Sábado 8 de noviembre de 2025, 20:00 h</p>
-    <p><strong>Lugar: </strong><a href="https://maps.app.goo.gl/WrmqXvQLwkHw3oQu8" target="_blank">Irigoitia 1007, Montevideo, Uruguay (Carmelitas)</a></p>
-</div>
+            @media (min-width: 300px) {
+                .btn {
+                    width: 151px;
+                }
+            }
 
-<p>Hacé clic en tu calendario favorito para agregar el evento:</p>
+            @media (min-width: 735px) {
+                .buttons {
+                    flex-direction: row;
+                }
+            }
+        </style>
+    </head>
+    <body>
+    
+    <h1 class="first">Boda de</h1>
+    <h1 class="second">Agustina & Enrique</h1>
+    <div class="event-info">
+        <p><strong>Fecha y hora: </strong>Sábado 8 de noviembre de 2025, 20:00 h</p>
+        <p><strong>Lugar: </strong><a href="https://maps.app.goo.gl/WrmqXvQLwkHw3oQu8" target="_blank">Irigoitia 1007, Montevideo, Uruguay (Carmelitas)</a></p>
+    </div>
+    
+    <p>Hacé clic en tu calendario favorito para agregar el evento:</p>
 
-<!-- Google Calendar -->
-<a class="btn google"
-   href="https://calendar.google.com/calendar/r/eventedit?text=Boda+Agustina+%26+Enrique&dates=20251108T230000Z/20251109T083000Z&location=Irigoitia+1007,+Montevideo,+Uruguay"
-   target="_blank">
-   <i class="fab fa-google"></i> Google Calendar
-</a>
+    <div class="buttons">
+        <!-- Google Calendar -->
+        <a class="btn google"
+           href="https://calendar.google.com/calendar/r/eventedit?text=Boda+Agustina+%26+Enrique&dates=20251108T230000Z/20251109T083000Z&location=Irigoitia+1007,+Montevideo,+Uruguay"
+           target="_blank">
+           <i class="fab fa-google"></i> Google Calendar
+        </a>
 
-<!-- Apple Calendar -->
-<a class="btn apple" href="evento.ics">
-   <i class="fab fa-apple"></i> Apple Calendar
-</a>
+        <!-- Apple Calendar -->
+        <a class="btn apple" href="evento.ics">
+           <i class="fab fa-apple"></i> Apple Calendar
+        </a>
 
-<!-- Microsoft Outlook -->
-<a class="btn outlook"
-   href="https://outlook.live.com/calendar/0/deeplink/compose?subject=Boda+Agustina+%26+Enrique&startdt=2025-11-08T20:00:00-03:00&enddt=2025-11-09T05:30:00-03:00&location=Irigoitia+1007,+Montevideo,+Uruguay"
-   target="_blank">
-   <i class="fa-solid fa-envelope"></i> Microsoft Outlook
-</a>
+        <!-- Microsoft Outlook -->
+        <a class="btn outlook"
+           href="https://outlook.live.com/calendar/0/deeplink/compose?subject=Boda+Agustina+%26+Enrique&startdt=2025-11-08T20:00:00-03:00&enddt=2025-11-09T05:30:00-03:00&location=Irigoitia+1007,+Montevideo,+Uruguay"
+           target="_blank">
+           <i class="fa-solid fa-envelope"></i> Microsoft Outlook
+        </a>
+    </div>
 
-<div class="note">
-    <p>Nota: en dispositivos Apple, si el evento no se abre automáticamente, probá abrir esta página en Safari para agregarlo a tu calendario.</p>
-</div>
-
-</body>
+    <div class="note">
+        <p>Nota: en dispositivos Apple, si el evento no se abre automáticamente, probá abrir esta página en Safari para agregarlo a tu calendario.</p>
+    </div>
+    
+    </body>
 </html>
